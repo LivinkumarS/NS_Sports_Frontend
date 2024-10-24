@@ -15,6 +15,7 @@ import TourDetails from "./pages/TourDetails";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateBlog from "./pages/createBlog";
 import LiveMatchPage from "./pages/LiveMatchPage";
+import Slider from "react-slick";
 
 export default function App() {
   const [sessStor, setSessStor] = useState(null);
@@ -68,7 +69,14 @@ export default function App() {
             <Route path="/createBlog" element={<CreateBlog />} />
           </Route>
         </Routes>
-          ):(<p className="p-4">Please Wait...!</p>)}
+          ):(<h1 className="text-white font-semibold p-5">
+            Loading matches...{` `}
+            <Spinner
+              size="sm"
+              color="warning"
+              aria-label="Warning spinner example"
+            />
+          </h1>)}
         <Footer />
       </BrowserRouter>
     

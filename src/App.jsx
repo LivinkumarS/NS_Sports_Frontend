@@ -69,7 +69,7 @@ export default function App() {
           </Route>
         </Routes>
       ) : (
-        <h1 className="text-white font-semibold p-5">
+        <h1 className="font-semibold p-5">
           Loading matches...{` `}
           <Spinner
             size="sm"

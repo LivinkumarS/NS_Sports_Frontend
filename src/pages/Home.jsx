@@ -68,7 +68,7 @@ const Home = () => {
           <div className="w-full flex flex-col sm:flex-row items-center justify-between">
             <div className="flex w-full overflow-x-auto gap-0 justify-start items-center space-x-8 mt-4 mb-4">
               <Link to={"/"}>
-                <h1 className="text-2xl font-bold text-red-600 flex gap-1 mb-2 whitespace-nowrap">
+                <h1 className="text-xl font-bold text-red-600 flex gap-1 mb-2 whitespace-nowrap">
                   Live Matches{" "}
                   <span className="mt-[4px]">
                     <GoDotFill />

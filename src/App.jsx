@@ -47,11 +47,11 @@ export default function App() {
   fetchAccessToken();
 
   return (
-    sessStor && (
+   
       <BrowserRouter>
         <Header />
         <ScrollToTop />
-
+        {sessStor && (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
@@ -68,9 +68,9 @@ export default function App() {
             <Route path="/createBlog" element={<CreateBlog />} />
           </Route>
         </Routes>
-
+          )}
         <Footer />
       </BrowserRouter>
-    )
+    
   );
 }

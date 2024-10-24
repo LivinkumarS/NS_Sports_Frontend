@@ -51,7 +51,7 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <ScrollToTop />
-        {sessStor && (
+        {sessStor ? (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
@@ -68,7 +68,7 @@ export default function App() {
             <Route path="/createBlog" element={<CreateBlog />} />
           </Route>
         </Routes>
-          )}
+          ):(<p className="p-4">Please Wait...!</p>)}
         <Footer />
       </BrowserRouter>
     

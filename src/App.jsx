@@ -15,7 +15,7 @@ import TourDetails from "./pages/TourDetails";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateBlog from "./pages/createBlog";
 import LiveMatchPage from "./pages/LiveMatchPage";
-import Slider from "react-slick";
+import { Spinner } from "flowbite-react";
 
 export default function App() {
   const [sessStor, setSessStor] = useState(null);
@@ -48,11 +48,10 @@ export default function App() {
   fetchAccessToken();
 
   return (
-   
-      <BrowserRouter>
-        <Header />
-        <ScrollToTop />
-        {sessStor ? (
+    <BrowserRouter>
+      <Header />
+      <ScrollToTop />
+      {sessStor ? (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
@@ -69,16 +68,17 @@ export default function App() {
             <Route path="/createBlog" element={<CreateBlog />} />
           </Route>
         </Routes>
-          ):(<h1 className="text-white font-semibold p-5">
-            Loading matches...{` `}
-            <Spinner
-              size="sm"
-              color="warning"
-              aria-label="Warning spinner example"
-            />
-          </h1>)}
-        <Footer />
-      </BrowserRouter>
-    
+      ) : (
+        <h1 className="text-white font-semibold p-5">
+          Loading matches...{` `}
+          <Spinner
+            size="sm"
+            color="warning"
+            aria-label="Warning spinner example"
+          />
+        </h1>
+      )}
+      <Footer />
+    </BrowserRouter>
   );
 }
